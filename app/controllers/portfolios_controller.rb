@@ -4,8 +4,9 @@ class PortfoliosController < ApplicationController
        @portfolio_items = Portfolio.all
     end
     
-    #def show
-    #end
+    def show
+      @portfolio_item = Portfolio.find(params[:id])
+    end
     
     def new
         @portfolio_item = Portfolio.new
@@ -48,5 +49,5 @@ class PortfoliosController < ApplicationController
       def portfolio_params
         params.require(:portfolio).permit(:title, :subtitle, :body)
       end
-    end
+end  
 
