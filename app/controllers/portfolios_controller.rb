@@ -30,14 +30,23 @@ class PortfoliosController < ApplicationController
     
     def update
       @portfolio_item = Portfolio.find(params[:id])
-    respond_to do |format|
-      if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
-      else
-        format.html { render :edit }
+      respond_to do |format|
+        if @portfolio_item.update(portfolio_params)
+          format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
+        else
+          format.html { render :edit }
+        end
       end
     end
-  end
+   
+    def destroy
+      @portfolio_item = Portfolio.find(params[:id])
+      @portfolio_item .destroy
+      respond_to do |format|
+        format.html { redirect_to portfolios_url , notice: 'Portfolio was successfully removed.' }
+      end
+    end
+  
     
     private
     # Use callbacks to share common setup or constraints between actions.
