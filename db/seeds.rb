@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+    )
+end
 
+puts "3 topics created"
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
@@ -22,7 +28,8 @@
     accumsan sodales magna. In dignissim volutpat ligula, vitae facilisis ligula. 
     Sed sed libero eleifend, ornare nunc eget, volutpat tortor. Aenean urna urna, 
     luctus at scelerisque sed, posuere eget nisi. Ut ut volutpat ante. Nunc dictum 
-    commodo velit eu elementum."
+    commodo velit eu elementum.",
+    topic_id: Topic.last.id
     )
 end
 puts "10 blog posts created"
@@ -36,10 +43,28 @@ end
 puts "5 skills created"
 
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
     title: "Portfolio title: #{portfolio_item}",
-    subtitle: "My great service",
+    subtitle: "Angular",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur 
+    sed erat viverra, elementum mauris eget, volutpat nulla. Donec maximus porttitor
+    gravida. Fusce congue nisl elementum convallis posuere. Duis suscipit vitae neque 
+    sed dictum. Sed pharetra nunc ac dolor posuere hendrerit. Maecenas consequat quam 
+    velit, nec feugiat arcu maximus ac. Praesent et pulvinar libero. In rutrum laoreet 
+    dolor id accumsan. Proin volutpat iaculis felis in finibus. Nulla auctor at magna 
+    sed semper. Suspendisse tristique eu felis nec ultricies. Morbi id neque leo. Nulla 
+    lacinia massa non laoreet laoreet. Integer vel nunc interdum lectus fringilla ullamcorper.
+    Nam maximus congue felis a semper",
+    main_image: "http://placehold.it/600x400", 
+    thumb_image: "http://placehold.it/350x200"
+    )
+end
+
+1.times do |portfolio_item|
+  Portfolio.create!(
+    title: "Portfolio title: #{portfolio_item}",
+    subtitle: "Ruby on Rails",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur 
     sed erat viverra, elementum mauris eget, volutpat nulla. Donec maximus porttitor
     gravida. Fusce congue nisl elementum convallis posuere. Duis suscipit vitae neque 
