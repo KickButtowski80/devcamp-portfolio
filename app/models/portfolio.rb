@@ -18,7 +18,7 @@ end
  
  
 =begin
-
+yes 
 meaning of ||=
 
 if self.main_image == nil
