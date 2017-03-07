@@ -1,0 +1,2 @@
+class AddStatusEnumToBlog < ApplicationRecord
+end
