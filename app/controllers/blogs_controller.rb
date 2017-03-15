@@ -3,9 +3,14 @@ class BlogsController < ApplicationController
   layout 'blog'
   # GET /blogs
   # GET /blogs.json
-  def index
-    @blogs = Blog.all
+  def index 
+    #two ways of debugging in ruby on rails
+    #byebug
+    #binding.pry
+    # special_blogs which is scope resides in blog.rb model
+    @blogs = Blog.special_blogs 
     @page_title = "My Portfolio Blog"
+     
   end
 
   # GET /blogs/1
