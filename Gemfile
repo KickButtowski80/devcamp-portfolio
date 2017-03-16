@@ -60,3 +60,5 @@ gem 'devise', '~> 4.2'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
+gem 'it_view_tool', git: 'https://github.com/KickButtowski80/it_view_tool'
+
