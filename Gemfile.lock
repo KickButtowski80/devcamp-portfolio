@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/KickButtowski80/it_view_tool
-  revision: 1bf49667d3787eac25680d316d8d991a22843b39
+  remote: https://github.com/KickButtowski80/i_t_view_tool
+  revision: dd8eab91d33cf7cc48ad90d67301f4821e40ef49
   specs:
-    it_view_tool (0.1.0)
+    i_t_view_tool (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -193,7 +193,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   friendly_id (~> 5.1.0)
-  it_view_tool!
+  i_t_view_tool!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -210,4 +210,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.13.7
+   1.14.6

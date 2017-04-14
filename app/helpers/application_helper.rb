@@ -17,6 +17,6 @@ module ApplicationHelper
     end
     
     def copyright_generator 
-      ItViewTool::Renderer.copyright 'Izak Tarashandegan', 'All right reserved'
+      ITViewTool::Renderer.copyright 'Izak Tarashandegan', 'All right reserved'
     end
 end
