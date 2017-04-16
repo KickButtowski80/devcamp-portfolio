@@ -1,9 +1,11 @@
 module ApplicationHelper
+  # style = " " adds bootstrap style, so login options can be 
+  # consitstant with other menu options 
   def login_helper style = ''
     # is_a? to check type of the class
     if current_user.is_a?(GuestUser)
       (link_to "Register", new_user_registration_path, class: style) +
-      "<br> ".html_safe +
+      " ".html_safe +
       (link_to "Login", new_user_session_path, class: style)
     else
       link_to "Logout", destroy_user_session_path, method: :delete, class: style
