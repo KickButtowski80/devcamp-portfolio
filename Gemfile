@@ -64,3 +64,8 @@ gem 'i_t_view_tool', git: 'https://github.com/KickButtowski80/i_t_view_tool'
 
 gem 'petergate', '~> 1.7', '>= 1.7.3'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+
+# for page pagination 
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+

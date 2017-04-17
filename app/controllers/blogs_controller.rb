@@ -11,7 +11,9 @@ class BlogsController < ApplicationController
     #byebug
     #binding.pry
     # special_blogs which is scope resides in blog.rb model
-    @blogs = Blog.special_blogs 
+    #@blogs = Blog.special_blogs 
+    
+    @blogs = Blog.page(params[:page]).per(5)
     @page_title = "My Portfolio Blog"
      
   end
