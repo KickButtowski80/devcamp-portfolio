@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
     layout 'portfolio'
     access all: [:show, :index, :angular ], user: {except: [:destroy,:new, :create, :update, :edit]}, site_admin: :all
     def index
-       @portfolio_items = Portfolio.all
+       @portfolio_items = Portfolio.page(params[:page]).per(6)
     end
     
     def angular
@@ -17,6 +17,8 @@ class PortfoliosController < ApplicationController
     
     def new
         @portfolio_item = Portfolio.new
+        # build instantiate @portfolio_item.technologies in this
+        # case 3 times
         3.times { @portfolio_item.technologies.build}
     end
     
@@ -63,7 +65,7 @@ class PortfoliosController < ApplicationController
     def portfolio_params
       params.require(:portfolio).permit(:title, 
                                         :subtitle,
-                                        :body,
+                                        :body, 
                                         technologies_attributes: [:name]
                                         )
     end

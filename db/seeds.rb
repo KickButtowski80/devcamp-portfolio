@@ -81,8 +81,19 @@ end
 
 puts "9 portfolio items created"
 
-3.times do |technology|
-  Portfolio.last.technologies.create! name:"Technology #{technology}"
+Portfolio.all.each do |p|
+  3.times do |technology|
+    p.technologies.create! name:"Technology #{technology}"
+  end
 end
 
+=begin
+the following code snippet is as same as above one
+3.times do |technology|
+ Technology.create!(
+  name: "Technology #{technology}",
+  portfolio_id: Portfolio.last.id
+)
+end
+=end
 puts "3 technologies items created"

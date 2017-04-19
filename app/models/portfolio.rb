@@ -1,5 +1,8 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
+  
+  # data vailidation for technologies. If it is blank, does not let it go 
+  # through 
   accepts_nested_attributes_for :technologies,
                               reject_if: lambda { |attrs| attrs['name'].blank?}
   
@@ -9,7 +12,8 @@ class Portfolio < ApplicationRecord
   def self.angular
       where subtitle: "Angular"
   end
-  
+   # above function has the same effect has the blow scope that 
+   # uses lambda 
 
   scope :ruby_on_rails_portfolio_items, ->{where subtitle: 'Ruby on Rails'  }
   
