@@ -57,7 +57,8 @@ puts "5 skills created"
     lacinia massa non laoreet laoreet. Integer vel nunc interdum lectus fringilla ullamcorper.
     Nam maximus congue felis a semper",
     main_image: "http://placehold.it/600x400", 
-    thumb_image: "http://placehold.it/350x200"
+    thumb_image: "http://placehold.it/350x200",
+    position: portfolio_item + 1 
     )
 end
 
@@ -75,7 +76,8 @@ end
     lacinia massa non laoreet laoreet. Integer vel nunc interdum lectus fringilla ullamcorper.
     Nam maximus congue felis a semper",
     main_image: "http://placehold.it/600x400", 
-    thumb_image: "http://placehold.it/350x200"
+    thumb_image: "http://placehold.it/350x200", 
+    position: 10
     )
 end
 

@@ -12,10 +12,17 @@ class Portfolio < ApplicationRecord
   def self.angular
       where subtitle: "Angular"
   end
+  
+  
    # above function has the same effect has the blow scope that 
    # uses lambda 
 
   scope :ruby_on_rails_portfolio_items, ->{where subtitle: 'Ruby on Rails'  }
+  
+  
+  def self.by_position
+    order("position ASC")
+  end
   
   after_initialize :set_defaults
   

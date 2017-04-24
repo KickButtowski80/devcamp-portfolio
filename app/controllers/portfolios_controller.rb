@@ -3,7 +3,14 @@ class PortfoliosController < ApplicationController
     layout 'portfolio'
     access all: [:show, :index, :angular ], user: {except: [:destroy,:new, :create, :update, :edit]}, site_admin: :all
     def index
-       @portfolio_items = Portfolio.page(params[:page]).per(6)
+      # pagination 
+      # @portfolio_items = Portfolio.page(params[:page]).per(6)
+      
+      # looking for position attr in Portfolio db and
+      # sort it from lowest to highest which is in scope by_position in
+      # portfolio.rb 
+      @portfolio_items = Portfolio.by_position.page(params[:page]).per(6)
+      
     end
     
     def angular

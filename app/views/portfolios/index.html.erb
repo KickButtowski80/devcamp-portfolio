@@ -4,12 +4,11 @@
          <%= link_to "new portfolio", new_portfolio_path if logged_in?(:site_admin)%>
       </div>
       <div class="row">
-        
-              <%= paginate @portfolio_items, class:'btn btn-primary'%>
-         </div>
+         <%= paginate @portfolio_items %>
+      </div>
       <div class="row">
          <%=render partial: 'portfolio_item', collection:  @portfolio_items %>
-         <%= paginate @portfolio_items %>
+        
      </div>
   </div>
 </div>  
