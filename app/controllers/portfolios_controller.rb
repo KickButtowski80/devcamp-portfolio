@@ -1,9 +1,29 @@
 class PortfoliosController < ApplicationController
     before_action :set_portfolio_item, only: [ :edit, :show, :update, :destroy]
     layout 'portfolio'
-    access all: [:show, :index, :angular ], user: {except: [:destroy,:new, :create, :update, :edit]}, site_admin: :all
+    access all: [:show, :index, :angular ], user: {except: [:destroy,:new, :create, :update, :edit, :sort]}, site_admin: :all
     def index
-       @portfolio_items = Portfolio.page(params[:page]).per(6)
+      # pagination 
+      # @portfolio_items = Portfolio.page(params[:page]).per(6)
+      
+      # looking for position attr in Portfolio db and
+      # sort it from lowest to highest which is in scope by_position in
+      # portfolio.rb 
+      @portfolio_items = Portfolio.by_position.page(params[:page]).per(6)
+      
+    end
+    
+    
+    def sort
+      params[:order].each do |key,value| 
+        #Parameters: {"order"=>{"0"=>{"id"=>"8", "position"=>"1"}, 
+        #"1"=>{"id"=>"9", "position"=>"2"}, "2"=>{"id"=>"1", "position"=>"3"}}}
+        # 0 is a key and value is {"id"=>"8", "position"=>"1"}
+        # value[:id]
+        Portfolio.find(value[:id]).update!(position: value[:position])
+      end
+      #by pass a ruby on rails trandition to look for a view template
+      render nothing: true
     end
     
     def angular
