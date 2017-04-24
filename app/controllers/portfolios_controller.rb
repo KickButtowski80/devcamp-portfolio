@@ -13,6 +13,19 @@ class PortfoliosController < ApplicationController
       
     end
     
+    
+    def sort
+      params[:order].each do |key,value| 
+        #Parameters: {"order"=>{"0"=>{"id"=>"8", "position"=>"1"}, 
+        #"1"=>{"id"=>"9", "position"=>"2"}, "2"=>{"id"=>"1", "position"=>"3"}}}
+        # 0 is a key and value is {"id"=>"8", "position"=>"1"}
+        # value[:id]
+        Portfolio.find(value[:id]).update!(position: value[:position])
+      end
+      #by pass a ruby on rails trandition to look for a view template
+      render nothing: true
+    end
+    
     def angular
       @angular_portfolio_items = Portfolio.angular
     end
