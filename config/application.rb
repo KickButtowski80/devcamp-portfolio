@@ -27,5 +27,6 @@ module DevcampPortfolio
    # end
    # no recommanded cuz it is allowed hacker to hack 
    #config.action_controller.permit_all_parameters = true
+    
   end
 end
