@@ -1,7 +1,7 @@
 <div class="container portfolio-container">
  <div class="row" style="padding-top: 30px">
   <div id="protfolio-img" class="col-md-7 col-sm-8" >
-   <%= image_tag(@portfolio_item.main_image, width: '100%') unless @portfolio_item.main_image.nil?%>
+   <%= image_tag portfolio_img(@portfolio_item.main_image, "main") unless @portfolio_item.main_image.nil?%>
   </div>
   <div class="col-md-5 col-sm-4">
      <%= @portfolio_item.title %> 
