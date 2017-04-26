@@ -18,13 +18,15 @@
       </div>
       <div class="form-group">
         <label class="btn btn-primary">
-          Upload a Main Image File <%= f.file_field :main_image, style: 'display:none;' %>
+          Upload a Main Image File&nbsp;&nbsp;&nbsp;
+          <%= f.file_field :main_image, style: 'display:none;' %>
         </label>
         
       </div>
       <div class="form-group">
         <label class="btn btn-primary">
-          Upload a Thumb Image File <%= f.file_field :thumb_image, style: 'display:none;' %>
+          Upload a Thumb Image File
+          <%= f.file_field :thumb_image, style: 'display:none;' %>
         </label>
       </div>
     </div>
@@ -44,11 +46,13 @@
     <h2>Technologies Used:</h2>
     <div>
       <%= f.fields_for :technologies do |technology_form|%>
-        <div class="form-group">
-          <%= technology_form.label :name %>
-          <%= technology_form.text_field :name,class:'form-control'%>
-        </div > 
+        <%= render 'technology_fields', f: technology_form %>
       <%end%> 
+      <div>
+        <!--f is related to entire block -->
+        <!--link_to_add_association is cocoon method -->
+        <%= link_to_add_association "Add Technology", f, :technologies %>
+      </div>
     </div>
       <div class="form-group">
         <%= f.submit "Save Portfolio Item",class: 'btn btn-primary btn-block'%>

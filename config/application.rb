@@ -13,7 +13,7 @@ require "sprockets/railtie"
 #forcing dotenv file , so it can work in the console
 require "dotenv-rails"
 # require "rails/test_unit/railtie"
-
+require 'carrierwave/processing/mini_magick' 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

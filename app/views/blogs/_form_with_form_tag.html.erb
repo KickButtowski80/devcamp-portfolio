@@ -1,0 +1,24 @@
+
+<!--bad practice to use form_tag.-->
+<!--one the reason is for example for blog, create and update actions-->
+<!--use blog_path. when a record is edited, it will be created again.-->
+<!--second reason, hash tags must be used 'blog[title]'-->
+<!--one form for editing and form for new actions NO DRY-->
+<!-- form_tag is not CRUD related -->
+
+<%= form_tag(blogs_path) do %>
+  <div class="form-group">
+    <!--ruby use hashes so blog[title] or blog[body] must be used-->
+    <%= label_tag 'blog[title]', "Blog Title" %>
+    <%= text_field_tag "blog[title]", blog.title , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'blog[body]', 'Blog Content'%>
+    <!--you see the value of blog.body during editting-->
+    <%= text_area_tag 'blog[body]', blog.body, class: 'form-control', rows: 15%>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Save", class: 'btn btn-primary' %>
+  </div>
+  
+<% end %>

@@ -36,10 +36,7 @@ class PortfoliosController < ApplicationController
     end
     
     def new
-        @portfolio_item = Portfolio.new
-        # build instantiate @portfolio_item.technologies in this
-        # case 3 times
-        3.times { @portfolio_item.technologies.build}
+        @portfolio_item = Portfolio.new 
     end
     
     def create
@@ -88,7 +85,8 @@ class PortfoliosController < ApplicationController
                                         :body,
                                         :main_image,
                                         :thumb_image,
-                                        technologies_attributes: [:name]
+                                        # delete tech related to cocoon gem 
+                                        technologies_attributes: [:id,:name, :_destroy]
                                         )
     end
 end  

@@ -4,7 +4,7 @@ class Portfolio < ApplicationRecord
   # data vailidation for technologies. If it is blank, does not let it go 
   # through 
   accepts_nested_attributes_for :technologies,
-                              reject_if: lambda { |attrs| attrs['name'].blank?}
+                                allow_destroy: true,reject_if: lambda { |attrs| attrs['name'].blank?}
   
    
   validates_presence_of :title, :body
