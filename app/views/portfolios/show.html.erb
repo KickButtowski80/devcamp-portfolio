@@ -1,9 +1,9 @@
 <div class="container portfolio-container">
  <div class="row" style="padding-top: 30px">
-  <div id="protfolio-img" class="col-md-7 col-sm-8" >
-   <%= image_tag portfolio_img(@portfolio_item.main_image, "main") unless @portfolio_item.main_image.nil?%>
+  <div id="protfolio-img" class="col-md-7" >
+   <%= image_tag portfolio_img(@portfolio_item.main_image, "main") %>
   </div>
-  <div class="col-md-5 col-sm-4">
+  <div class="col-md-5">
      <%= @portfolio_item.title %> 
      <hr>
      <%= @portfolio_item.subtitle %> 
@@ -12,6 +12,11 @@
      <h3>Technologies Used:</h3>  
      <% @portfolio_item.technologies.each do |t| %>
       <p><%= t.name %></p>
+     <%end%>
+     <% if logged_in?(:site_admin)%>
+      <div class="col-md-12">
+       <%=link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning'%> 
+      </div>
      <%end%>
   </div>
  </div>
