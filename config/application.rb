@@ -30,5 +30,10 @@ module DevcampPortfolio
    # no recommanded cuz it is allowed hacker to hack 
    #config.action_controller.permit_all_parameters = true
     
+    
+    #eager is an array and we add elments to it
+    # telling rails to load any modules inside
+    # the lib dir
+    config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
