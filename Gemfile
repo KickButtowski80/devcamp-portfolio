@@ -80,3 +80,6 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'gritter', '~> 1.2'
 
 gem 'twitter', '~> 6.1'
+
+# no sql database and very fast db
+gem 'redis', '~> 3.3', '>= 3.3.3'

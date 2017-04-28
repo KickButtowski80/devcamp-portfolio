@@ -15,6 +15,9 @@ class User < ApplicationRecord
          
          
   validates_presence_of :name
+  # dependent: :destroy is for the time when an blog post is deleted
+  # , so all its comments will be deleted as well.
+  has_many :comments, dependent: :destroy 
   
   def first_name
     self.name.split.first
