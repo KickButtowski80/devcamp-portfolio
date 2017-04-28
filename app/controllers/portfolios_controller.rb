@@ -86,6 +86,7 @@ class PortfoliosController < ApplicationController
                                         :main_image,
                                         :thumb_image,
                                         # delete tech related to cocoon gem 
+                                        # :_destroy is needed by cocoon gem
                                         technologies_attributes: [:id,:name, :_destroy]
                                         )
     end

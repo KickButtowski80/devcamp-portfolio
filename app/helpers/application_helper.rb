@@ -90,7 +90,7 @@ NAV
     #alert does not work in form error handeling cuz it can not pick up value of 
     # flash but @portfolio_item.errors can be picked up as an example
     def alert_generator msg
-      js add_gritter(msg, :title => "Please pay attention!", sticky: false)
+      js add_gritter(msg, :title => "Izak Tarashandegan!", sticky: false)
     end
     
 end
