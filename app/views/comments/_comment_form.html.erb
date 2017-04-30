@@ -1,7 +1,7 @@
 <% unless current_user.is_a? GuestUser %>
 <!--url: '#' override the ror behavior and stay in the same page-->
 <!--instead of loading different ones-->
-  <%=  form_for @comment, url: '#' do |f| %>
+  <%= form_for @comment, url: '#' do |f| %>
     <div class="form-group">
       <%= f.label :content %>
       <%= f.text_area :content, class: 'form-control' %>

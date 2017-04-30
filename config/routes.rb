@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   resources :portfolios, except: [:show] do
     #set up portfolios/sort for dragging goal
@@ -22,13 +23,6 @@ Rails.application.routes.draw do
   #mount sec is going to give us websocket connection
   mount ActionCable.server => '/cable'
   
-  
-  
-  
-  
-  
   root to: "pages#home"
-  
-  
   
 end
