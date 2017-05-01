@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+
+  
   def create
     @comment = Current_user.comments.build(comment_params)
   end
