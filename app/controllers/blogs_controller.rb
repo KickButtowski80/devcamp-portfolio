@@ -12,6 +12,7 @@ class BlogsController < ApplicationController
     #binding.pry
     # special_blogs which is scope resides in blog.rb model
     #@blogs = Blog.special_blogs 
+    # recent is scope in blog.rb
     if logged_in? :site_admin
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
@@ -25,12 +26,18 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    #include comments for blog so we do not hit db too often
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
+    if logged_in? :site_admin || @blog.published?
+      
+      #include comments for blog so we do not hit db too often
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      
+      @page_title = @blog.title
+      @seo_keywords = @blog.body
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
+
   end
 
   # GET /blogs/new
