@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    if logged_in? :site_admin || @blog.published?
+    if logged_in?(:site_admin) || @blog.published?
       
       #include comments for blog so we do not hit db too often
       @blog = Blog.includes(:comments).friendly.find(params[:id])
