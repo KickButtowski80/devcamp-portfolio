@@ -11,7 +11,7 @@
       <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
   <%end%>  
-  <p> <%= blog.body %></p>
+  <p> <%= markdown(blog.body) %></p>
   
 </div>
 

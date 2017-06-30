@@ -82,3 +82,7 @@ gem 'twitter', '~> 6.1'
 # no sql database and very fast db
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.3', '>= 3.3.3'
+# gem for makedowing html means showing the content with style
+gem 'redcarpet', '~> 3.4'
+# gem for highligthing syntax 
+gem 'coderay', '~> 1.1', '>= 1.1.1'
